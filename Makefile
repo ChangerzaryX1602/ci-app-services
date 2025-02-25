@@ -1,5 +1,4 @@
-all: go-build \
-	docker-build \
+all:docker-build \
 	docker-save \
 	docker-clean
 
@@ -13,12 +12,12 @@ go-build:
 
 docker-build:
 	docker build -f ./cmd/server/Dockerfile \
-	-t zercle/gofiber-skeleton \
+	-t ci-app-services \
 	--pull \
 	.
 
 docker-save:
-	docker save zercle/gofiber-skeleton | gzip > dist/zercle-gofiber-skeleton.tar.gz
+	docker save ci-app-services | gzip > dist/ci-app-services.tar.gz
 
 docker-clean:
 	docker image prune -f
