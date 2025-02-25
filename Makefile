@@ -1,4 +1,5 @@
-all:docker-build \
+all: go-build \
+	docker-build \
 	docker-save \
 	docker-clean
 
