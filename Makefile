@@ -14,7 +14,6 @@ go-build:
 docker-build:
 	docker build -f ./cmd/server/Dockerfile \
 	-t ci-app-services \
-	--pull \
 	.
 
 docker-save:
